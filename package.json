@@ -1,0 +1,25 @@
+{
+  "name": "os-info",
+  "version": "0.0.0",
+  "main": "electron.js",
+  "description": "OS info desktop app powered by Electron.",
+  "keywords": [
+    "os-info",
+    "electron",
+    "js",
+    "html",
+    "css",
+    "react",
+    "bootstrap",
+    "node.js"
+  ],
+  "author": "Luis Float <contact@luisfloat.com> (https://luisfloat.com)",
+  "homepage": "https://github.com/luisfloat/os-info#readme",
+  "bugs": {
+    "url": "https://github.com/luisfloat/os-info/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisfloat/os-info.git"
+  }
+}
