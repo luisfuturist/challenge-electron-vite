@@ -1,5 +1,5 @@
 const { Navbar, Container, Nav } = require("react-bootstrap");
-const { e } = require("../assets/utils");
+const { e } = require("../assets/utils.js");
 
 const template = () => {
     return e("div", null,
