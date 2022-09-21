@@ -21,5 +21,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luisfloat/os-info.git"
+  },
+  "devDependencies": {
+    "electron": "^20.1.4"
+  },
+  "scripts": {
+    "start": "electron ."
   }
 }
