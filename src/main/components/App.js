@@ -8,7 +8,7 @@ const Header = require("./Header.js");
 const App = () => {
     return e(BrowserRouter, {},
         e(Header),
-        Body({}, routes()),
+        e(Body, { slots: [ routes() ] }),
     );
 };
 
