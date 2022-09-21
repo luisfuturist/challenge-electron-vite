@@ -23,9 +23,19 @@
     "url": "git+https://github.com/luisfloat/os-info.git"
   },
   "devDependencies": {
-    "electron": "^20.1.4"
+    "electron": "^20.1.4",
+    "electron-builder": "^23.3.3"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "linux": {
+      "category": "Utility",
+      "target": [
+        "AppImage"
+      ]
+    }
   }
 }
