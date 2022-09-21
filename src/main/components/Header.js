@@ -10,6 +10,7 @@ const Header = () => {
             e(Navbar.Collapse, { id: "main-navbar-nav", variant: "primary" },
                 e(Nav, { className: "me-auto" },
                     ni("/*", "Home"),
+                    ni("/mem", "Memory"),
                 ),
             ),
         ),
