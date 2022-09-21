@@ -1,5 +1,6 @@
 const { Navbar, Container, Nav } = require("react-bootstrap");
 const { e } = require("../assets/utils.js");
+const ni = require("../nodes/ni.js");
 
 const template = () => {
     return e("div", null,
@@ -8,7 +9,9 @@ const template = () => {
                 e(Navbar.Brand, { href: "#home" }, "OS Info"),
                 e(Navbar.Toggle, { "aria-controls": "main-navbar-nav" }),
                 e(Navbar.Collapse, { id: "main-navbar-nav", variant: "primary" },
-                    e(Nav, { className: "me-auto" }),
+                    e(Nav, { className: "me-auto" },
+                        ni("/*", "Home"),
+                    ),
                 ),
             ),
         ),
