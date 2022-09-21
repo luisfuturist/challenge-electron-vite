@@ -7,7 +7,7 @@ const Header = require("./Header.js");
 
 const App = () => {
     return e(BrowserRouter, {},
-        Header(),
+        e(Header),
         Body({}, routes()),
     );
 };
