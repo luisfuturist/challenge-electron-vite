@@ -6,8 +6,8 @@ const style = {
     marginBottom: "50px",
 };
 
-function Body(props, content) {
+const Body = (props, content) => {
     return e(Container, { style }, content);
-}
+};
 
 module.exports = Body;

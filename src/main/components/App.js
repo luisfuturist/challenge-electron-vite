@@ -5,11 +5,11 @@ const routes = require("../routes.js");
 const Body = require("./Body.js");
 const Header = require("./Header.js");
 
-function App() {
+const App = () => {
     return e(BrowserRouter, {},
         Header(),
         Body({}, routes),
     );
-}
+};
 
 module.exports = App;

@@ -2,7 +2,7 @@ const { Navbar, Container, Nav } = require("react-bootstrap");
 const { e } = require("../assets/utils.js");
 const ni = require("../nodes/ni.js");
 
-function Header() {
+const Header = () => {
     return e(Navbar, { bg: "dark", variant: "dark", expand: "lg", fixed: "top" }, 
         e(Container, {},
             e(Navbar.Brand, { href: "#home" }, "OS Info"),
@@ -14,6 +14,6 @@ function Header() {
             ),
         ),
     );
-}
+};
 
 module.exports = Header;
