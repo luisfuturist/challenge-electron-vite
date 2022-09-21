@@ -5,15 +5,11 @@ const routes = require("../routes.js");
 const Body = require("./Body.js");
 const Header = require("./Header.js");
 
-const template = () => {
+function App() {
     return e(BrowserRouter, {},
         Header(),
         Body({}, routes),
     );
-};
-
-function App() {
-    return template();
 }
 
 module.exports = App;
