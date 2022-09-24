@@ -9,7 +9,7 @@ const Cpu = (props) => {
             e(Card.Title, {}, `CPU ${props.id}`),
             e(Card.Text, {},
                 entry("Model: ", props.model),
-                entry("Speed: ", props.speed),
+                entry("Speed: ", `${props.speed}Mhz`),
             ),
             e(CpuUsage, { free: props.free }),
         ),
