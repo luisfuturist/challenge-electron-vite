@@ -12,6 +12,7 @@ const Header = () => {
                     ni("/*", "Home"),
                     ni("/mem", "Memory"),
                     ni("/proc", "Processor"),
+                    ni("/app", "App"),
                 ),
             ),
         ),
