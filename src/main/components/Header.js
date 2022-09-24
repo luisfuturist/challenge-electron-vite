@@ -11,6 +11,7 @@ const Header = () => {
                 e(Nav, { className: "me-auto" },
                     ni("/*", "Home"),
                     ni("/mem", "Memory"),
+                    ni("/proc", "Processor"),
                 ),
             ),
         ),
