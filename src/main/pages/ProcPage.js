@@ -61,6 +61,18 @@ const ProcPage = () => {
     const model = cpus[0].model;
     const count = cpus.length;
 
+    const cpusSpeed = () => {
+        const array = [];
+
+        for(let i = 0; i < count; i ++) {
+            array[i] = cpus[i].speed;
+        }
+
+        return array;
+    }
+
+    const averageSpeed = cpusSpeed().reduce((a, b) => a + b) / count;
+
     return e("div", {},
         e("h1", { className: "text-primary" }, "Processor"),
 
@@ -75,6 +87,7 @@ const ProcPage = () => {
                     e(Card.Title, {}, "Total"),
                     e(Card.Text, {},
                         entry("Count: ", count),
+                        entry("Average Speed: ", `${averageSpeed}Mhz`),
                     ),
                     e(CpuUsage, { free: totalFree }),
                 ),
