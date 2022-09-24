@@ -14,7 +14,7 @@ const MemPage = () => {
         return () => { clearInterval(timerID); };
     }, []);
 
-    const info = (value) => (value / (1024 * 1024)).toFixed(1);
+    const info = (value) => (value / (1024 * 1024) / 1024).toFixed(1);
 
     const abs = {
         total: info(os.totalmem()),
