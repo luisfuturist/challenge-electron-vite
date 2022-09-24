@@ -1,6 +1,6 @@
 const os = require("os");
 const { useState, useEffect } = require("react");
-const { Card, CardGroup } = require("react-bootstrap");
+const { Card, CardGroup, Stack } = require("react-bootstrap");
 const { e, getCpusInfo } = require("../assets/utils.js");
 const Cpu = require("../components/Cpu.js");
 const CpuUsage = require("../components/CpuUsage.js");
@@ -63,14 +63,21 @@ const ProcPage = () => {
 
     return e("div", {},
         e("h1", { className: "text-primary" }, "Processor"),
-        entry("Model: ", model),
-        entry("Architecture: ", os.arch()),
 
-        e(Card, { border: "dark" }, 
-            e(Card.Body, {},
-                e(Card.Title, {}, "Total"),
-                entry("Count: ", count),
-                e(CpuUsage, { free: totalFree }),
+        e(Stack, {},
+            e("div", { className: "mb-3" },
+                entry("Model: ", model),
+                entry("Architecture: ", os.arch()),
+            ),
+
+            e(Card, { border: "dark" }, 
+                e(Card.Body, {},
+                    e(Card.Title, {}, "Total"),
+                    e(Card.Text, {},
+                        entry("Count: ", count),
+                    ),
+                    e(CpuUsage, { free: totalFree }),
+                ),
             ),
         ),
 

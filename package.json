@@ -1,6 +1,6 @@
 {
   "name": "os-info",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "main": "electron.js",
   "description": "OS info desktop app powered by Electron.",
   "keywords": [

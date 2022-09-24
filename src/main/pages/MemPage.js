@@ -1,6 +1,6 @@
 const os = require("os");
 const { useState, useEffect } = require("react");
-const { ProgressBar, Card } = require("react-bootstrap");
+const { ProgressBar, Card, Stack } = require("react-bootstrap");
 const { e, semanticVariant } = require("../assets/utils.js");
 const percLabel = require("../nodes/percLabel.js");
 const entry = require("../nodes/entry.js");
@@ -33,10 +33,12 @@ const MemPage = () => {
         e(Card, { border: "primary" },
             e(Card.Body, {},
                 e(Card.Title, {}, "RAM"),
-                entry("Total: ", `${abs.total}GiB`),
-                entry("Free: ", `${abs.free}GiB (${perc.free()})`),
-                entry("Usage: ", `${abs.usage}GiB (${perc.usage()})`),
-                e(ProgressBar, { now: perc.value, label: perc.usage(), variant }, ),
+                e(Card.Text, {}, 
+                    entry("Total: ", `${abs.total}GiB`),
+                    entry("Free: ", `${abs.free}GiB (${perc.free()})`),
+                    entry("Usage: ", `${abs.usage}GiB (${perc.usage()})`),
+                ),
+                e(ProgressBar, { now: perc.value, label: perc.usage(), variant }),
             ),
         ),
     );
