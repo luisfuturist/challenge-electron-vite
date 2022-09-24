@@ -32,6 +32,7 @@ const MemPage = () => {
         e("h1", { className: "text-primary" }, "Memory"),
         e(Card, { border: "primary" },
             e(Card.Body, {},
+                e(Card.Title, {}, "RAM"),
                 entry("Total: ", `${abs.total}GiB`),
                 entry("Free: ", `${abs.free}GiB (${perc.free()})`),
                 entry("Usage: ", `${abs.usage}GiB (${perc.usage()})`),
