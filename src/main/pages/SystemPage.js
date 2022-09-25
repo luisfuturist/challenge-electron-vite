@@ -13,6 +13,8 @@ const SystemPage = () => {
         return () => { clearInterval(timerID); };
     }, []);
 
+    const user = os.userInfo();
+
     return e("div", {},
         e("h1", { className: "text-primary" }, "System"),
         e(Card, { border: "primary" }, 
@@ -25,6 +27,20 @@ const SystemPage = () => {
                     entry("Endianness of system: ", os.endianness()),
                 ),
                 entry("Uptime: ", `${uptime.toFixed(1)}s (${formatTime(uptime)})`),
+            ),
+        ),
+        
+        e(Card, { border: "dark", className: "mt-3" },
+            e(Card.Body, {},
+                e(Card.Title, {}, `User`),
+                e(Card.Text, {},
+                    entry("Host: ", os.hostname()),
+                    entry("Name: ", user.username),
+                    entry("UID: ", user.uid),
+                    entry("GID: ", user.gid),
+                    entry("Shell: ", user.shell),
+                    entry("Home directory: ", os.homedir()),
+                ),
             ),
         ),
     );
