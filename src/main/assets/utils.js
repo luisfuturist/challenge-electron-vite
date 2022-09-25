@@ -31,8 +31,20 @@ function getCpusInfo(cpus) {
     };
 }
 
+function formatTime(seconds) {
+    const pad = (s) => (s < 10 ? '0' : '') + s;
+
+    var days = Math.floor(seconds / (60 * 60 * 24));
+    var hours = Math.floor(seconds % (60 * 60 * 24) / (60 * 60));
+    var minutes = Math.floor(seconds % (60 * 60) / 60);
+    var seconds = Math.floor(seconds % 60);
+  
+    return `${pad(days)}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`
+}
+
 module.exports = {
     e,
     semanticVariant,
     getCpusInfo,
+    formatTime,
 };
