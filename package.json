@@ -2,7 +2,7 @@
   "name": "os-info",
   "version": "0.10.0",
   "main": "electron.js",
-  "description": "OS info desktop app powered by Electron.",
+  "description": "Desktop app for displaying system information.",
   "keywords": [
     "os-info",
     "electron",
