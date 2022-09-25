@@ -1,0 +1,37 @@
+# os-info
+
+## About
+
+It's a desktop app for displaying system information.
+
+* ♻️ **Memory monitoring** - Total, usage and memory free;
+* 🧮 **Processor monitoring** - CPU Count, usage, free, and more.
+* ⚙️ **Operational system info** - Name, type, release, user info, and more.
+
+## Technologies
+
+* **Electron** as desktop app framework;
+* **electron-builder** for desktop app packaging and building;
+* **React** as UI library;
+* **react-router-dom** as SPA router;
+* **Bootstrap** as frontend framework;
+* **React Bootstrap** as UI component library.
+
+## Installation
+
+Clone it from GitHub repository:
+
+```bash
+git clone https://github.com/luisfloat/os-info
+```
+
+## Developing
+
+Name | Script | Description
+-----|---------|-----------------
+`start` | ```npm run start``` | Start Electron
+`build` | ```npm run build``` | Build app
+
+## Author
+
+<a href="https://twitter.com/luisfloat"><img src="https://img.shields.io/badge/-Twitter-30363D?style=flat&amp;logo=twitter" alt="Twitter"/></a> <a href="https://github.com/luisfloat"><img src="https://img.shields.io/badge/-Github-30363D?style=flat&amp;logo=github" alt="GitHub"/></a> <a href="https://instagram.com/luisfloat"><img src="https://img.shields.io/badge/-Instagram-30363D?style=flat&amp;logo=instagram" alt="Instagram"/></a> <a href="mailto:contact@luisfloat.com"><img src="https://img.shields.io/badge/-Gmail-30363D?style=flat&amp;logo=gmail" alt="Gmail"/></a>
