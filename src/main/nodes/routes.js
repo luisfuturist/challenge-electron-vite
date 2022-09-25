@@ -4,6 +4,7 @@ const AppPage = require("../pages/AppPage.js");
 const HomePage = require("../pages/HomePage.js");
 const MemPage = require("../pages/MemPage.js");
 const ProcPage = require("../pages/ProcPage.js");
+const SystemPage = require("../pages/SystemPage.js");
 const route = require("./route.js");
 
 const routes = () => {
@@ -11,6 +12,7 @@ const routes = () => {
         route("/*", HomePage),
         route("/mem", MemPage),
         route("/proc", ProcPage),
+        route("/sys", SystemPage),
         route("/app", AppPage),
     );
 };
