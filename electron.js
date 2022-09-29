@@ -12,7 +12,7 @@ function createWindow() {
         },
     });
 
-    win.loadFile("index.html");
+    win.loadFile(path.join(__dirname, "public", "index.html"));
 }
 
 app.whenReady().then(() => {
