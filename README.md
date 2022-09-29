@@ -25,7 +25,9 @@ Clone it from GitHub repository:
 git clone https://github.com/luisfloat/os-info
 ```
 
-## Developing
+## Documentation
+
+### Scripts
 
 Name | Script | Description
 -----|---------|-----------------
