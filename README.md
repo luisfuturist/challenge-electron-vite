@@ -1,4 +1,4 @@
-# os-info
+# Systemi
 
 ## About
 
@@ -22,7 +22,7 @@ It's a desktop app for displaying system information.
 Clone it from GitHub repository:
 
 ```bash
-git clone https://github.com/luisfloat/os-info
+git clone https://github.com/luisfloat/systemi-app
 ```
 
 ## Documentation
