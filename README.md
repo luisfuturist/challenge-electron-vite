@@ -19,10 +19,13 @@ It's a desktop app for displaying system information.
 
 ## Installation
 
-Clone it from GitHub repository:
+Run:
 
 ```bash
 git clone https://github.com/luisfloat/systemi-app
+cd systemi-app
+npm i
+npm run start
 ```
 
 ## Documentation
