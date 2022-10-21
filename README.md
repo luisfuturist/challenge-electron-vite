@@ -34,8 +34,8 @@ npm run start
 
 Name | Script | Description
 -----|---------|-----------------
-`start` | ```npm run start``` | Start Electron
-`build` | ```npm run build``` | Build app
+`main:start` | ```npm run start``` | Start Electron
+`main:build` | ```npm run build``` | Build app
 
 ## Author
 
