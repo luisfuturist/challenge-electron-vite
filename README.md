@@ -14,7 +14,7 @@ It's a desktop app for displaying system information.
 * **electron-builder** for desktop app packaging and building;
 * **React** as UI library;
 * **react-router-dom** as SPA router;
-* **Bootstrap** as frontend framework;
+* **Bootstrap** as front-end framework;
 * **React Bootstrap** as UI component library.
 
 ## Installation
