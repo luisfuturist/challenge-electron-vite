@@ -34,8 +34,8 @@
     "electron-builder": "^23.3.3"
   },
   "scripts": {
-    "start": "electron .",
-    "build": "electron-builder"
+    "main:start": "electron .",
+    "main:build": "electron-builder"
   },
   "build": {
     "linux": {
