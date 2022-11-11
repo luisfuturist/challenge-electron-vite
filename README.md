@@ -25,7 +25,7 @@ Run:
 git clone https://github.com/luisfloat/systemi-app
 cd systemi-app
 npm i
-npm run start
+npm run main:start
 ```
 
 ## Documentation
@@ -34,8 +34,8 @@ npm run start
 
 Name | Script | Description
 -----|---------|-----------------
-`main:start` | ```npm run start``` | Start Electron
-`main:build` | ```npm run build``` | Build app
+`main:start` | ```npm run main:start``` | Start Electron
+`main:pkg` | ```npm run main:pkg``` | Build app and package desktop app
 
 ## Author
 
