@@ -1,19 +1,18 @@
-const { Card, Stack } = require("react-bootstrap");
-const { e } = require("../assets/utils");
-const entry = require("../nodes/entry");
-const CpuUsage = require("./CpuUsage");
+import { Card } from "react-bootstrap";
+import entry from "../nodes/entry";
+import CpuUsage from "./CpuUsage";
 
-const Cpu = (props) => {
-    return e(Card, { border: "primary" },
-        e(Card.Body, {},
-            e(Card.Title, {}, `CPU ${props.id}`),
-            e(Card.Text, {},
-                entry("Model: ", props.model),
-                entry("Speed: ", `${props.speed}Mhz`),
-            ),
-            e(CpuUsage, { free: props.free }),
-        ),
+export default function Cpu({ id, model, speed, free }) {
+    return (
+        <Card border="primary">
+            <Card.Body>
+                <Card.Title>{`CPU ${id}`}</Card.Title>
+                <Card.Text>
+                    {entry("Model: ", model)}
+                    {entry("Speed: ", `${speed}Mhz`)}
+                </Card.Text>
+                <CpuUsage free={free}/>
+            </Card.Body>
+        </Card>
     );
-};
-
-module.exports = Cpu;
+}

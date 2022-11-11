@@ -1,12 +1,11 @@
-const { Spinner } = require("react-bootstrap");
-const { e } = require("../assets/utils");
+import { Spinner } from "react-bootstrap";
 
-const percLabel = (num) => {
+export default function percLabel(num) {
     if(typeof num === "number") return num.toFixed(1) + "%";
-    
-    return e(Spinner, { animation: "border", role: "status", size: "sm" },
-        e("span", { className: "visually-hidden"}, "Loading..."),
+
+    return (
+        <Spinner animation="border" role="status" size="sm">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
     );
 }
-
-module.exports = percLabel;

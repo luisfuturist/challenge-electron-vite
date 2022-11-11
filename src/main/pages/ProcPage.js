@@ -1,12 +1,12 @@
-const os = require("os");
-const { useState, useEffect } = require("react");
-const { Card, CardGroup, Stack } = require("react-bootstrap");
-const { e, getCpusInfo } = require("../assets/utils.js");
-const Cpu = require("../components/Cpu.js");
-const CpuUsage = require("../components/CpuUsage.js");
-const entry = require("../nodes/entry.js");
+import os from "os";
+import { useState, useEffect } from "react";
+import { Card, CardGroup, Stack } from "react-bootstrap";
+import { getCpusInfo } from "../assets/utils.js";
+import Cpu from "../components/Cpu.js";
+import CpuUsage from "../components/CpuUsage.js";
+import entry from "../nodes/entry.js";
 
-const ProcPage = () => {
+export default function ProcPage() {
     const delay = 500;
     const [ cpus, setCpus ] = useState(os.cpus());
     const [ totalFree, setTotalFree ] = useState("");
@@ -73,33 +73,33 @@ const ProcPage = () => {
 
     const averageSpeed = cpusSpeed().reduce((a, b) => a + b) / count;
 
-    return e("div", {},
-        e("h1", { className: "text-primary" }, "Processor"),
+    return (
+        <div>
+            <h1 className="text-primary">Processor</h1>
 
-        e(Stack, {},
-            e("div", { className: "mb-3" },
-                entry("Model: ", model),
-                entry("Architecture: ", os.arch()),
-            ),
+            <Stack>
+                <div className="mb-3">
+                    {entry("Model: ", model)}
+                    {entry("Architecture: ", os.arch())}
+                </div>
 
-            e(Card, { border: "dark" }, 
-                e(Card.Body, {},
-                    e(Card.Title, {}, "Total"),
-                    e(Card.Text, {},
-                        entry("Count: ", count),
-                        entry("Average Speed: ", `${averageSpeed}Mhz`),
-                    ),
-                    e(CpuUsage, { free: totalFree }),
-                ),
-            ),
-        ),
+                <Card border="dark">
+                    <Card.Body>
+                        <Card.Title>Total</Card.Title>
+                        <Card.Text>
+                            {entry("Count: ", count)}
+                            {entry("Average Speed: ", `${averageSpeed}Mhz`)}
+                        </Card.Text>
+                        <CpuUsage free={totalFree}></CpuUsage>
+                    </Card.Body>
+                </Card>
+            </Stack>
 
-        e("hr"),
+            <hr/>
 
-        e(CardGroup, {},
-            cpus.map((cpu, i) => e(Cpu, { key: i, id: i, ...cpu, free: free[i] })),
-        ),
+            <CardGroup>
+                {cpus.map((cpu, i) => <Cpu {...{ key: i, id: i, ...cpu, free: free[i] }}/>)}
+            </CardGroup>
+        </div>
     );
-};
-
-module.exports = ProcPage;
+}

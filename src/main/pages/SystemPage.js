@@ -1,10 +1,10 @@
-const os = require("os");
-const { useState, useEffect } = require("react");
-const { Card } = require("react-bootstrap");
-const { e, formatTime } = require("../assets/utils.js");
-const entry = require("../nodes/entry.js");
+import os from "os";
+import { useState, useEffect } from "react";
+import { Card } from "react-bootstrap";
+import { formatTime } from "../assets/utils.js";
+import entry from "../nodes/entry.js";
 
-const SystemPage = () => {
+export default function SystemPage() {
     const [ uptime, setUptime ] = useState(os.uptime());
 
     useEffect(() => {
@@ -15,35 +15,35 @@ const SystemPage = () => {
 
     const user = os.userInfo();
 
-    return e("div", {},
-        e("h1", { className: "text-primary" }, "System"),
-        e(Card, { border: "primary" }, 
-            e(Card.Body, {},
-                e(Card.Title, {}, `Operational`),
-                e(Card.Text, {},
-                    entry("Platform: ", os.platform()),
-                    entry("Name: ", os.type()),
-                    entry("Release: ", os.release()),
-                    entry("Endianness of system: ", os.endianness()),
-                ),
-                entry("Uptime: ", `${uptime.toFixed(1)}s (${formatTime(uptime)})`),
-            ),
-        ),
-        
-        e(Card, { border: "dark", className: "mt-3" },
-            e(Card.Body, {},
-                e(Card.Title, {}, `User`),
-                e(Card.Text, {},
-                    entry("Host: ", os.hostname()),
-                    entry("Name: ", user.username),
-                    entry("UID: ", user.uid),
-                    entry("GID: ", user.gid),
-                    entry("Shell: ", user.shell),
-                    entry("Home directory: ", os.homedir()),
-                ),
-            ),
-        ),
+    return (
+        <div>
+            <h1 className="text-primary">System</h1>
+            <Card border="primary">
+                <Card.Body>
+                    <Card.Title>Operational</Card.Title>
+                    <Card.Text>
+                        {entry("Platform: ", os.platform())}
+                        {entry("Name: ", os.type())}
+                        {entry("Release: ", os.release())}
+                        {entry("Endianness of system: ", os.endianness())}
+                    </Card.Text>
+                    {entry("Uptime: ", `${uptime.toFixed(1)}s (${formatTime(uptime)})`)}
+                </Card.Body>
+            </Card>
+            
+            <Card border="dark" className="mt-3">
+                <Card.Body>
+                    <Card.Title>User</Card.Title>
+                    <Card.Text>
+                        {entry("Host: ", os.hostname())}
+                        {entry("Name: ", user.username)}
+                        {entry("UID: ", user.uid)}
+                        {entry("GID: ", user.gid)}
+                        {entry("Shell: ", user.shell)}
+                        {entry("Home directory: ", os.homedir())}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        </div>
     );
-};
-
-module.exports = SystemPage;
+}

@@ -1,8 +1,7 @@
-const { Link } = require("react-router-dom");
-const { e } = require("../assets/utils");
+import { Link } from "react-router-dom";
 
-const ni = (to, content) => {
-    return e(Link, { to, className: "nav-link" }, content);
+export default function ni(to, content) {
+    return (
+        <Link to={to} className="nav-link">{content}</Link>
+    );
 }
-
-module.exports = ni;

@@ -1,8 +1,8 @@
-const { Route } = require("react-router-dom");
-const { e } = require("../assets/utils");
+import { Route } from "react-router-dom";
+import { e } from "../assets/utils";
 
-const route = (path, component, index) => {
-    return e(Route, { path, element: e(component), index });
+export default function route(path, component, index) {
+    return (
+        <Route path={path} element={e(component)} index={index} key={index}/>
+    );
 }
-
-module.exports = route;

@@ -1,21 +1,20 @@
-const { Card } = require("react-bootstrap");
-const { e } = require("../assets/utils.js");
-const entry = require("../nodes/entry.js");
+import { Card } from "react-bootstrap";
+import entry from "../nodes/entry.js";
 
-const AppPage = () => {
-    return e("div", {},
-        e("h1", { className: "text-primary" }, "App"),
-        e(Card, { border: "primary" },
-            e(Card.Body, {},
-                e(Card.Title, {}, "Version"),
-                e(Card.Text, {},
-                    entry(`Chrome: `, process.versions['chrome']),
-                    entry(`Node: `, process.versions['node']),
-                    entry(`Electron: `, process.versions['electron']),
-                ),
-            ),
-        ),
+export default function AppPage() {
+    return (
+        <div>
+            <h1 className="text-primary">App</h1>
+            <Card border="primary">
+                <Card.Body>
+                    <Card.Title>Version</Card.Title>
+                    <Card.Text>
+                        {entry(`Chrome: `, process.versions['chrome'])}
+                        {entry(`Node: `, process.versions['node'])}
+                        {entry(`Electron: `, process.versions['electron'])}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        </div>
     );
-};
-
-module.exports = AppPage;
+}

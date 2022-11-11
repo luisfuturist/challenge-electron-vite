@@ -1,13 +1,12 @@
-const { Container } = require("react-bootstrap");
-const { e } = require("../assets/utils.js");
+import { Container } from "react-bootstrap";
 
 const style = {
     marginTop: "80px",
     marginBottom: "50px",
 };
 
-const Body = (props) => {
-    return e(Container, { style }, ...props.slots);
-};
-
-module.exports = Body;
+export default function Body({ children }) {
+    return (
+        <Container style={style}>{children}</Container>
+    );
+}

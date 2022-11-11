@@ -1,20 +1,20 @@
-const { ProgressBar, Stack, Card } = require("react-bootstrap");
-const { e, semanticVariant } = require("../assets/utils.js");
-const entry = require("../nodes/entry.js");
-const percLabel = require("../nodes/percLabel");
+import { ProgressBar } from "react-bootstrap";
+import { semanticVariant } from "../assets/utils.js";
+import entry from "../nodes/entry.js";
+import percLabel from "../nodes/percLabel";
 
-const CpuUsage = (props) => {
-    const usage = 100 - props.free;
+export default function CpuUsage({ free }) {
+    const usage = 100 - free;
     const label = percLabel(usage);
     const variant = semanticVariant(usage);
 
-    return e("div", {},
-        e("div", { className: "mb-3" },
-            entry("Usage: ", label),
-            entry("Free: ", percLabel(props.free)),
-        ),
-        e(ProgressBar, { now: usage, label, variant }),
+    return (
+        <div>
+            <div className="mb-3">
+                {entry("Usage: ", label)}
+                {entry("Free: ", percLabel(free))}
+            </div>
+            <ProgressBar {...{ now: usage, label, variant }}/>,
+        </div>
     );
-};
-
-module.exports = CpuUsage;
+}

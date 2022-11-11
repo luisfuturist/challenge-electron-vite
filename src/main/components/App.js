@@ -1,15 +1,13 @@
+import { BrowserRouter } from "react-router-dom";
+import routes from "../nodes/routes.js";
+import Body from "./Body.js";
+import Header from "./Header.js";
 
-const { BrowserRouter } = require("react-router-dom");
-const { e } = require("../assets/utils.js");
-const routes = require("../nodes/routes.js");
-const Body = require("./Body.js");
-const Header = require("./Header.js");
-
-const App = () => {
-    return e(BrowserRouter, {},
-        e(Header),
-        e(Body, { slots: [ routes() ] }),
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Header/>
+            <Body>{routes()}</Body>
+        </BrowserRouter>
     );
-};
-
-module.exports = App;
+}

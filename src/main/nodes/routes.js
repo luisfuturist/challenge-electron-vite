@@ -1,20 +1,21 @@
-const { Routes } = require("react-router-dom");
-const { e } = require("../assets/utils.js");
-const AppPage = require("../pages/AppPage.js");
-const HomePage = require("../pages/HomePage.js");
-const MemPage = require("../pages/MemPage.js");
-const ProcPage = require("../pages/ProcPage.js");
-const SystemPage = require("../pages/SystemPage.js");
-const route = require("./route.js");
+import { Routes } from "react-router-dom";
+import AppPage from "../pages/AppPage.js";
+import HomePage from "../pages/HomePage.js";
+import MemPage from "../pages/MemPage.js";
+import ProcPage from "../pages/ProcPage.js";
+import SystemPage from "../pages/SystemPage.js";
+import route from "./route.js";
 
-const routes = () => {
-    return e(Routes, {},
-        route("/*", HomePage),
-        route("/mem", MemPage),
-        route("/proc", ProcPage),
-        route("/sys", SystemPage),
-        route("/app", AppPage),
+export default function routes() {
+    const routes = [
+        { path: "/*", el: HomePage },
+        { path: "/mem", el: MemPage },
+        { path: "/proc", el: ProcPage },
+        { path: "/sys", el: SystemPage },
+        { path: "/app", el: AppPage },
+    ];
+
+    return (
+        <Routes>{routes.map((o, i) => route(o.path, o.el, i))}</Routes>
     );
-};
-
-module.exports = routes;
+}

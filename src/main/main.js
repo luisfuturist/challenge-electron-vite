@@ -1,13 +1,10 @@
-const ReactDOM = require("react-dom/client");
-const { e } = require("./assets/utils.js");
-const App = require("./components/App.js");
+import ReactDOM from "react-dom/client";
+import App from "./components/App.js";
 
-function main() {
+export default function main() {
     const root = ReactDOM.createRoot(
         document.getElementById('root')
     );
 
-    root.render(e(App));
+    root.render(<App/>);
 }
-
-module.exports = main;
