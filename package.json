@@ -38,6 +38,9 @@
     "main:pkg": "electron-builder"
   },
   "build": {
+    "directories": {
+      "output": "./dist/desktop/"
+    },
     "linux": {
       "category": "Utility",
       "target": [
