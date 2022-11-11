@@ -39,7 +39,9 @@
   },
   "scripts": {
     "main:start": "electron .",
-    "main:pkg": "electron-builder"
+    "main:pkg": "electron-builder",
+    "main:build": "babel src/main/ --out-dir ./dist/web/",
+    "main:dev": "babel --watch src/main/ --out-dir ./dist/web/"
   },
   "build": {
     "directories": {
