@@ -35,7 +35,7 @@
   },
   "scripts": {
     "main:start": "electron .",
-    "main:build": "electron-builder"
+    "main:pkg": "electron-builder"
   },
   "build": {
     "linux": {
