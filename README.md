@@ -39,6 +39,8 @@ Name | Script | Description
 -----|---------|-----------------
 `main:start` | ```npm run main:start``` | Start Electron
 `main:pkg` | ```npm run main:pkg``` | Build app and package desktop app
+`main:build` | ```npm run main:build``` | Compile `src/main` into `./dist/web/`
+`main:dev` | ```npm run main:dev``` | Watch `src/main` and on changes compile it into `./dist/web/`
 
 ## Author
 
