@@ -1,8 +1,8 @@
 # Systemi
 
-## About
-
 It's a desktop app for displaying system information.
+
+## Features
 
 * ♻️ **Memory monitoring** - Total, usage and memory free;
 * 🧮 **Processor monitoring** - CPU Count, usage, free, and more.
