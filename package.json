@@ -38,8 +38,8 @@
     "electron-builder": "^23.3.3"
   },
   "scripts": {
-    "main:start": "electron .",
-    "main:pkg": "electron-builder",
+    "main:start": "npm run main:build && electron .",
+    "main:pkg": "npm run main:build && electron-builder",
     "main:build": "babel src/main/ --out-dir ./dist/web/",
     "main:dev": "babel --watch src/main/ --out-dir ./dist/web/"
   },
