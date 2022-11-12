@@ -10,11 +10,14 @@ It's a desktop app for displaying system information.
 
 ## Technologies
 
+* **JavaScript** as programming language;
+* **JSX** as JavaScript syntax extension;
+* **Babel** for JavaScript compiling;
 * **Electron** as desktop app framework;
 * **electron-builder** for desktop app packaging and building;
-* **React** as UI library;
-* **react-router-dom** as SPA router;
-* **Bootstrap** as front-end framework;
+* **React** as library for building UI;
+* **react-router-dom** for SPA routing;
+* **Bootstrap** as CSS front-end framework;
 * **React Bootstrap** as UI component library.
 
 ## Installation
