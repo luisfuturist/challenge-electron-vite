@@ -9,7 +9,7 @@ import entry from "../nodes/entry.js";
 export default function ProcPage() {
     const delay = 500;
     const [ cpus, setCpus ] = useState(os.cpus());
-    const [ totalFree, setTotalFree ] = useState("");
+    const [ totalFree, setTotalFree ] = useState("Loading");
     const [ free, setFree ] = useState([]);
 
     const totalCpusInfo = getCpusInfo;
