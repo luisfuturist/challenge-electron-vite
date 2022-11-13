@@ -1,6 +1,6 @@
 import os from "os";
 import { useState, useEffect } from "react";
-import { Card, CardGroup, Stack } from "react-bootstrap";
+import { Card, Col, Row, Stack } from "react-bootstrap";
 import { getCpusInfo } from "../assets/utils.js";
 import Cpu from "../components/Cpu.js";
 import CpuUsage from "../components/CpuUsage.js";
@@ -97,9 +97,13 @@ export default function ProcPage() {
 
             <hr/>
 
-            <CardGroup>
-                {cpus.map((cpu, i) => <Cpu {...{ key: i, id: i, ...cpu, free: free[i] }}/>)}
-            </CardGroup>
+            <Row xs={1} md={2} className="g-2">
+                {cpus.map((cpu, i) => (
+                    <Col md="6" lg="3">
+                        <Cpu {...{ key: i, id: i, ...cpu, free: free[i] }}/>
+                    </Col>
+                ))}
+            </Row>
         </div>
     );
 }

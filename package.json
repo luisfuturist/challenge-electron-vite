@@ -1,6 +1,6 @@
 {
   "name": "systemi-app",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "main": "electron.js",
   "description": "Desktop app for displaying system information.",
   "keywords": [
