@@ -99,7 +99,7 @@ export default function ProcPage() {
 
             <Row xs={1} md={2} className="g-2">
                 {cpus.map((cpu, i) => (
-                    <Col md="6" lg="3">
+                    <Col md="6" lg="3" key={i}>
                         <Cpu {...{ key: i, id: i, ...cpu, free: free[i] }}/>
                     </Col>
                 ))}
