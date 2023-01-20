@@ -1,19 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card } from "react-bootstrap";
 import { formatTime } from "../assets/utils.js";
-import entry from "../nodes/entry.jsx";
+import Entry from "../components/Entry.jsx";
+import { useInterval } from "../hooks/useInterval.js";
 const os = require("os");
 
 export default function SystemPage() {
     const [ uptime, setUptime ] = useState(os.uptime());
-
-    useEffect(() => {
-        let timerID = setInterval(() => setUptime(os.uptime()), 1000);
-
-        return () => { clearInterval(timerID); };
-    }, []);
+    useInterval(() => setUptime(os.uptime()), 1000);
 
     const user = os.userInfo();
+
+    const opEntries = [
+        { key: "Platform: ", value: os.platform() },
+        { key: "Name: ", value: os.type() },
+        { key: "Release: ", value: os.release() },
+        { key: "Endianness of system: ", value: os.endianness() },
+    ];
+    const userEntries = [
+        { key: "Host: ", value: os.hostname() },
+        { key: "Name: ", value: user.username },
+        { key: "UID: ", value: user.uid },
+        { key: "GID: ", value: user.gid },
+        { key: "Shell: ", value: user.shell },
+        { key: "Home directory: ", value: os.homedir() },
+    ];
 
     return (
         <div>
@@ -22,12 +33,15 @@ export default function SystemPage() {
                 <Card.Body>
                     <Card.Title>Operational</Card.Title>
                     <Card.Text>
-                        {entry("Platform: ", os.platform())}
-                        {entry("Name: ", os.type())}
-                        {entry("Release: ", os.release())}
-                        {entry("Endianness of system: ", os.endianness())}
+                        { opEntries.map((entry, i) => (
+                            <Entry prefix={entry.key} key={i}>
+                                {entry.value}
+                            </Entry>
+                        ))}
                     </Card.Text>
-                    {entry("Uptime: ", `${uptime.toFixed(1)}s (${formatTime(uptime)})`)}
+                    <Entry prefix="Uptime: ">
+                        {uptime.toFixed(1)}s ({formatTime(uptime)})
+                    </Entry>
                 </Card.Body>
             </Card>
             
@@ -35,12 +49,11 @@ export default function SystemPage() {
                 <Card.Body>
                     <Card.Title>User</Card.Title>
                     <Card.Text>
-                        {entry("Host: ", os.hostname())}
-                        {entry("Name: ", user.username)}
-                        {entry("UID: ", user.uid)}
-                        {entry("GID: ", user.gid)}
-                        {entry("Shell: ", user.shell)}
-                        {entry("Home directory: ", os.homedir())}
+                        { userEntries.map((entry, i) => (
+                            <Entry prefix={entry.key} key={i}>
+                                {entry.value}
+                            </Entry>
+                        ))}
                     </Card.Text>
                 </Card.Body>
             </Card>

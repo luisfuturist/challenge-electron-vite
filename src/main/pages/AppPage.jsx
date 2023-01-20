@@ -1,7 +1,13 @@
 import { Card } from "react-bootstrap";
-import entry from "../nodes/entry.jsx";
+import Entry from "../components/Entry";
 
 export default function AppPage() {
+    const entries = [
+        { key: "Chrome: ", value: process.versions['chrome'] },
+        { key: "Node: ", value: process.versions['node'] },
+        { key: "Electron: ", value: process.versions['electron'] },
+    ];
+
     return (
         <div>
             <h1 className="text-primary">App</h1>
@@ -9,9 +15,11 @@ export default function AppPage() {
                 <Card.Body>
                     <Card.Title>Version</Card.Title>
                     <Card.Text>
-                        {entry(`Chrome: `, process.versions['chrome'])}
-                        {entry(`Node: `, process.versions['node'])}
-                        {entry(`Electron: `, process.versions['electron'])}
+                        { entries.map((entry, i) => (
+                            <Entry prefix={entry.key} key={i}>
+                                {entry.value}
+                            </Entry>
+                        ))}
                     </Card.Text>
                 </Card.Body>
             </Card>

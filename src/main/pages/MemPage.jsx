@@ -1,32 +1,19 @@
-import { useEffect, useState } from "react";
-import { Card, ProgressBar } from "react-bootstrap";
-import { semanticVariant } from "../assets/utils.js";
-import entry from "../nodes/entry.jsx";
-import percLabel from "../nodes/percLabel.jsx";
+import { useState } from "react";
+import { Card } from "react-bootstrap";
+import { formatMem, formatPerc } from "../assets/utils.js";
+import Entry from "../components/Entry.jsx";
+import LoadableProgressBar from "../components/LoadableProgressBar.jsx";
+import { PercEntry } from "../components/PercEntry.jsx";
+import { useInterval } from "../hooks/useInterval";
 const os = require("os");
 
 export default function MemPage() {
-    const [ free, setFree ] = useState(os.freemem());
+    const [ free, setFree ] = useState();
+    useInterval(() => setFree(os.freemem()), 1000);
 
-    useEffect(() => {
-        let timerID = setInterval(() => setFree(os.freemem()), 1000);
-
-        return () => { clearInterval(timerID); };
-    }, []);
-
-    const info = (value) => (value / (1024 * 1024) / 1024).toFixed(1);
-
-    const abs = {
-        total: info(os.totalmem()),
-        usage: info(os.totalmem() - free),
-        free: info(free),
-    };
-    const perc = {
-        value: (abs.usage / abs.total) * 100,
-        usage() { return percLabel(this.value); },
-        free() { return percLabel(100 - this.value); },
-    };
-    const variant = semanticVariant(perc.value);
+    const total = os.totalmem();
+    const usage = () => total - free;
+    const perc = () => (usage() / total) * 100;
 
     return (
         <div>
@@ -34,12 +21,22 @@ export default function MemPage() {
             <Card border="primary">
                 <Card.Body>
                     <Card.Title>RAM</Card.Title>
-                    <Card.Text>
-                        {entry("Total: ", `${abs.total}GiB`)}
-                        {entry("Free: ", `${abs.free}GiB (${perc.free()})`)}
-                        {entry("Usage: ", `${abs.usage}GiB (${perc.usage()})`)}
-                    </Card.Text>
-                    <ProgressBar {...{ now: perc.value, label: perc.usage(), variant }}/>
+                    <Entry prefix="Total: ">{formatMem(total)}</Entry>
+                    <PercEntry
+                        prefix="Free: "
+                        value={free}
+                        total={total}
+                    />
+                    <PercEntry
+                        prefix="Usage: "
+                        value={os.totalmem() - free}
+                        total={total}
+                    />
+                    <div className="mt-2"/>
+                    <LoadableProgressBar {...{
+                        now: perc(),
+                        label: formatPerc(perc()),
+                    }}/>
                 </Card.Body>
             </Card>
         </div>
