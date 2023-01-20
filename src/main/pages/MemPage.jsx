@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Card } from "react-bootstrap";
 import { formatMem, formatPerc } from "../assets/utils.js";
 import Entry from "../components/Entry.jsx";
@@ -12,8 +12,8 @@ export default function MemPage() {
     useInterval(() => setFree(os.freemem()), 1000);
 
     const total = os.totalmem();
-    const usage = () => total - free;
-    const perc = () => (usage() / total) * 100;
+    const usage = useMemo(() => total - free);
+    const perc = useMemo(() => (usage / total) * 100);
 
     return (
         <div>
@@ -34,8 +34,8 @@ export default function MemPage() {
                     />
                     <div className="mt-2"/>
                     <LoadableProgressBar {...{
-                        now: perc(),
-                        label: formatPerc(perc()),
+                        now: perc,
+                        label: formatPerc(perc),
                     }}/>
                 </Card.Body>
             </Card>

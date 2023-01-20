@@ -3,13 +3,15 @@ import { formatMem, formatPerc } from "../assets/utils";
 import Entry from "./Entry";
 
 export function PercEntry({ prefix, value, total }) {
-    let perc = (value / total) * 100;
-    let abs = formatMem(value);
-    let data = `${abs} (${formatPerc(perc)})`;
     let loading = false;
+    let data;
 
     if(isNaN(value) || isNaN(total)) {
         loading = true;
+    } else {
+        let perc = (value / total) * 100;
+        let abs = formatMem(value);
+        data = `${abs} (${formatPerc(perc)})`;
     }
 
     return (
