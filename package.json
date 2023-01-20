@@ -24,35 +24,22 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.1",
+    "http-server": "^14.1.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.0"
+    "react-router-dom": "^6.4.0",
+    "vite": "^4.0.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.20.2",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6",
+    "@vitejs/plugin-react": "^3.0.1",
     "electron": "^20.1.4",
     "electron-builder": "^23.3.3"
   },
   "scripts": {
-    "main:start": "npm run main:build && electron .",
-    "main:pkg": "npm run main:build && electron-builder",
-    "main:build": "babel src/main/ --out-dir ./dist/web/",
-    "main:dev": "babel --watch src/main/ --out-dir ./dist/web/"
-  },
-  "build": {
-    "appId": "com.luisfloat.systemi-app",
-    "directories": {
-      "output": "./dist/desktop/"
-    },
-    "linux": {
-      "category": "Utility",
-      "target": [
-        "AppImage"
-      ]
-    }
+    "start": "electron .",
+    "dev": "ENV_DEV=true electron .",
+    "dev:mock": "node ./scripts/dev.js",
+    "pkg": "node ./scripts/pkg.js"
   }
 }

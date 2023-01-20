@@ -1,8 +1,8 @@
-import os from "os";
 import { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { formatTime } from "../assets/utils.js";
-import entry from "../nodes/entry.js";
+import entry from "../nodes/entry.jsx";
+const os = require("os");
 
 export default function SystemPage() {
     const [ uptime, setUptime ] = useState(os.uptime());

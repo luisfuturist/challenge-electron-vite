@@ -1,9 +1,9 @@
-import os from "os";
-import { useState, useEffect } from "react";
-import { ProgressBar, Card, Stack } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Card, ProgressBar } from "react-bootstrap";
 import { semanticVariant } from "../assets/utils.js";
-import percLabel from "../nodes/percLabel.js";
-import entry from "../nodes/entry.js";
+import entry from "../nodes/entry.jsx";
+import percLabel from "../nodes/percLabel.jsx";
+const os = require("os");
 
 export default function MemPage() {
     const [ free, setFree ] = useState(os.freemem());

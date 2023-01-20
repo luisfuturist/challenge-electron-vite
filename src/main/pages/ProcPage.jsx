@@ -1,10 +1,10 @@
-import os from "os";
 import { useState, useEffect } from "react";
 import { Card, Col, Row, Stack } from "react-bootstrap";
 import { getCpusInfo } from "../assets/utils.js";
-import Cpu from "../components/Cpu.js";
-import CpuUsage from "../components/CpuUsage.js";
-import entry from "../nodes/entry.js";
+import Cpu from "../components/Cpu.jsx";
+import CpuUsage from "../components/CpuUsage.jsx";
+import entry from "../nodes/entry.jsx";
+const os = require("os");
 
 export default function ProcPage() {
     const delay = 500;

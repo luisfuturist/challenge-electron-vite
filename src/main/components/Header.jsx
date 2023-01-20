@@ -1,5 +1,5 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
-import ni from "../nodes/ni.js";
+import ni from "../nodes/ni.jsx";
 
 export default function Header() {
     return (

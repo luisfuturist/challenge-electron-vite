@@ -1,18 +1,37 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 
-function createWindow() {
+async function serve() {
+    if(process.env.ENV_DEV) {
+        const vite = require("vite");
+		const server = await vite.createServer();
+		server.listen();
+
+        return "http://localhost:5173";
+    } else {
+        const httpServer = require("http-server");
+        httpServer.createServer({
+			root: path.join(__dirname, "dist"),
+		}).listen(3024);
+
+		return "http://localhost:3024";
+    }
+}
+
+async function createWindow() {
+    const serverUrl = await serve();
+
     const win = new BrowserWindow({
         width: 800,
         height: 600,
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
-            preload: path.join(__dirname, "preload.js"),
+            contextIsolation: false,
         },
     });
 
-    win.loadFile(path.join(__dirname, "public", "index.html"));
+    win.loadURL(serverUrl);
 }
 
 app.whenReady().then(() => {

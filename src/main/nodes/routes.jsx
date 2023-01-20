@@ -1,10 +1,10 @@
 import { Routes } from "react-router-dom";
-import AppPage from "../pages/AppPage.js";
-import HomePage from "../pages/HomePage.js";
-import MemPage from "../pages/MemPage.js";
-import ProcPage from "../pages/ProcPage.js";
-import SystemPage from "../pages/SystemPage.js";
-import route from "./route.js";
+import AppPage from "../pages/AppPage.jsx";
+import HomePage from "../pages/HomePage.jsx";
+import MemPage from "../pages/MemPage.jsx";
+import ProcPage from "../pages/ProcPage.jsx";
+import SystemPage from "../pages/SystemPage.jsx";
+import route from "./route.jsx";
 
 export default function routes() {
     const routes = [

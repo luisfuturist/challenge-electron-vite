@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import entry from "../nodes/entry.js";
+import entry from "../nodes/entry.jsx";
 
 export default function AppPage() {
     return (
