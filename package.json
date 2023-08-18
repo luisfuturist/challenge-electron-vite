@@ -1,5 +1,5 @@
 {
-  "name": "systemi-app",
+  "name": "system-app",
   "version": "0.11.0",
   "main": "electron.js",
   "description": "Desktop app for displaying system information.",
@@ -14,13 +14,13 @@
     "node.js"
   ],
   "author": "Luis Float <contact@luisfloat.com> (https://luisfloat.com)",
-  "homepage": "https://github.com/luisfloat/systemi-app#readme",
+  "homepage": "https://github.com/luisfloat/system-app#readme",
   "bugs": {
-    "url": "https://github.com/luisfloat/systemi-app/issues"
+    "url": "https://github.com/luisfloat/system-app/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luisfloat/systemi-app.git"
+    "url": "git+https://github.com/luisfloat/system-app.git"
   },
   "dependencies": {
     "bootstrap": "^5.2.1",

@@ -1,4 +1,4 @@
-# Systemi
+# system-app
 
 It's a desktop app for displaying system information.
 
@@ -25,8 +25,8 @@ It's a desktop app for displaying system information.
 Run:
 
 ```bash
-git clone https://github.com/luisfloat/systemi-app
-cd systemi-app
+git clone https://github.com/luisfloat/system-app
+cd system-app
 npm i
 npm run main:start
 ```

@@ -5,7 +5,7 @@ const build = async () => {
     await vite.build();
     await electronBuilder.build({
         config: {
-            appId: "com.luisfloat.systemi-app",
+            appId: "com.luisfloat.system-app",
             files: [
                 "dist/**/*",
                 "electron.js"

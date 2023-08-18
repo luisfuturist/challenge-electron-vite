@@ -13,7 +13,7 @@ export default function Header() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
             <Container>
-                <Navbar.Brand href="#home">Systemi</Navbar.Brand>
+                <Navbar.Brand href="#home">System</Navbar.Brand>
                 <Navbar.Toggle aria-controls="main-navbar-nav"/>
                 <Navbar.Collapse id="main-navbar-nav" variant="primary">
                     <Nav className="me-auto">
