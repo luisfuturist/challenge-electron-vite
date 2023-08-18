@@ -1,6 +1,6 @@
 {
   "name": "systemi-app",
-  "version": "0.10.4",
+  "version": "0.11.0",
   "main": "electron.js",
   "description": "Desktop app for displaying system information.",
   "keywords": [
@@ -39,7 +39,9 @@
   "scripts": {
     "start": "electron .",
     "dev": "ENV_DEV=true electron .",
-    "dev:mock": "node ./scripts/dev.js",
-    "pkg": "node ./scripts/pkg.js"
+    "pkg": "node ./scripts/pkg.js",
+    "dev:mock": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }

@@ -5,7 +5,7 @@ async function serve() {
     if(process.env.ENV_DEV) {
         const vite = require("vite");
 		const server = await vite.createServer();
-		server.listen();
+		await server.listen();
 
         return "http://localhost:5173";
     } else {
