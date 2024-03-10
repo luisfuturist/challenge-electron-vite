@@ -1,5 +1,5 @@
 {
-  "name": "system-app",
+  "name": "challenge-electron-vite",
   "version": "0.11.0",
   "main": "electron.js",
   "description": "Desktop app for displaying system information.",
@@ -13,14 +13,14 @@
     "bootstrap",
     "node.js"
   ],
-  "author": "Luis Float <contact@luisfloat.com> (https://luisfloat.com)",
-  "homepage": "https://github.com/luisfloat/system-app#readme",
+  "author": "Luis Emidio <luisfuturist@gmail.com> (https://luisfuturist.com)",
+  "homepage": "https://github.com/luisfuturist/challenge-electron-vite#readme",
   "bugs": {
-    "url": "https://github.com/luisfloat/system-app/issues"
+    "url": "https://github.com/luisfuturist/challenge-electron-vite/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luisfloat/system-app.git"
+    "url": "git+https://github.com/luisfuturist/challenge-electron-vite.git"
   },
   "dependencies": {
     "bootstrap": "^5.2.1",

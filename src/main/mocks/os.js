@@ -15,7 +15,7 @@ export function useMemNoise() {
 
 export const totalmem = () => 8204058624;
 export const hostname = () => "mocked_hostname";
-export const homedir = () => "/home/luisfloat/";
+export const homedir = () => "/home/luisfuturist/";
 export const platform = () => "linux";
 export const type = () => "Linux";
 export const release = () => "0.0.0";
@@ -35,7 +35,7 @@ export function uptime() {
 }
 
 export const userInfo = () => ({
-    name: "luisfloat",
+    name: "luisfuturist",
     uid: "1000",
     gid: "1000",
     shell: "/bin/bash",
